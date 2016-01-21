@@ -29,7 +29,7 @@ mac: max chapter
 mip: min problem
 map: max problem
  */
-var mic, mac, mip, map;
+var mic, mac, mip, map, bip;
 
 /* function that syncs relevant variables
 
@@ -40,6 +40,7 @@ chrome.storage.sync.get({
 	mac: 18,
 	mip: 1,
 	map: 20,
+	bip: "10.7.1.210",
     sce: false,
 	bpf: false,
 	ena: true
@@ -48,6 +49,7 @@ chrome.storage.sync.get({
 	mac = parseInt(items.mac);
 	mip = parseInt(items.mip);
 	map = parseInt(items.map);
+	bip = items.bip;
 	if(items.bpf === true && window.location.host === "10.7.1.210"){ /* NOTE TO SELF: MAKE THIS IP CHANGEABLE */
 		window.location = 'http://' + document.getElementById('url').innerHTML;
 	}
