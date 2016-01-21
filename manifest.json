@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "PSV2",
+  "description": "dank memes only pls",
+  "version": "0.420",
+  "icons": {
+	"128":"psv2icon.png"
+  },
+  "permissions": [
+    "https://*/*",
+	"http://*/*", 
+	"storage",
+	"webRequest"
+  ],
+  "browser_action": {
+    "default_icon": "popicon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["psmod.js"]
+    }
+  ]
+}
