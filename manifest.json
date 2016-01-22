@@ -4,6 +4,7 @@
   "name": "PSV3",
   "description": "yes",
   "version": "0.420",
+  "default_locale": "en",
   "icons": {
 	"128":"images/psv3icon.png"
   },
