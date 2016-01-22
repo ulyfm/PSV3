@@ -7,6 +7,11 @@ function save_options() {
   }, function() {
     var status = document.getElementById('status');
     status.textContent = 'saved.';
+    if(bypass === true){
+      chrome.browserAction.setBadgeText({text: "on"});
+    }else{
+      chrome.browserAction.setBadgeText({text: ""});
+    }
     setTimeout(function() {
       status.textContent = '';
     }, 750);
