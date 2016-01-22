@@ -5,7 +5,7 @@
   "description": "yes",
   "version": "0.420",
   "icons": {
-	"128":"psv2icon.png"
+	"128":"images/psv3icon.png"
   },
   
   "permissions": [
@@ -16,7 +16,7 @@
   ],
   
   "browser_action": {
-    "default_icon": "popicon.png",
+    "default_icon": "images/popicon.png",
     "default_popup": "popup.html"
   },
   
