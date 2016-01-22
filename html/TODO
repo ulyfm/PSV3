@@ -1,0 +1,13 @@
+1. Make a website for psv3 (maybe psv3.org? or psv3.noop.us?)
+	- make sure to inclue inline installation!
+		(https://developer.chrome.com/webstore/inline_installation)
+2. Add a welcome page?
+	- normies won't understand how to use it without constant guidance
+
+3. Update the popup menu
+	- it could look so sick, I'm thinking maybe an underwater theme.
+
+4. Make it actually work
+	- fix up the code (see comments)
+
+5. Finish deleting all of the PracticeIt-related code. This is only for bypassing the filter now.

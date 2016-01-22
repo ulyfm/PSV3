@@ -10,31 +10,26 @@
 		border: 1px solid #3498db;
 		padding: 10px;
 	}
+	h4{
+		font-size: 10pt;
+		font-weight: bold;
+		margin: 0px;
+	}
 	</style>
 </head>
 <body>
 	<div id="border">
-	<h3>PSV3 Options:</h3>
-	Min chapter: <input type="text" id="mic"><br>
-	Max chapter: <input type="text" id="mac"><br>
-	Min problem: <input type="text" id="mip"><br>
-	Max problem: <input type="text" id="map"><br>
-	IP (optional): <input type="text" id="bip"><br><br>
-	<label>
-		<input type="checkbox" id="enable">
-		Enable Renaming
-	</label>
-	<br>
-	<label>
-		<input type="checkbox" id="sce">
-		Make problems Self-checks
-	</label>
-	<br>
+	<h3>PSV3 Options</h3>
 	<label>
 		<input type="checkbox" id="bpf">
 		Bypass filter
 	</label>
-	<br><br>
+	<br>
+	<br>
+	<h4>Optional</h4>
+	Blocker IP: <input type="text" id="bip">
+	<br>
+	<br>
 	<button id="save">save</button>
 	<p id="status"></p>
 	<script type="text/javascript" src="../scripts/popsave.js"></script>
