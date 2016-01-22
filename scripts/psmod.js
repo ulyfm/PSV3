@@ -34,7 +34,7 @@ var pageBlockedCB = function(details) {
 	if(details.statusCode % 100 === 3){
 		if(url is to fucking iboss){
 			/* at this point we need to resend the request--get its id! */
-			pastRequests[details.requestId];
+			
 			return {cancel: true};
 		}
 		
@@ -45,6 +45,7 @@ var pageBlockedCB = function(details) {
 /* a function that is to be called onBeforeRequest that saves relevant information that can later be used should the request need to be repeated. */
 var saveDestinationsCB = function(details) {
 	/* save the urls in pastRequests */
+	pastRequests[details.requestId] = details;
 };
 
 /* setting up the callbacks on requests and when redirects are possible. */
