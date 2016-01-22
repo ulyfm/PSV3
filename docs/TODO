@@ -6,8 +6,11 @@
 
 3. Update the popup menu
 	- it could look so sick, I'm thinking maybe an underwater theme.
+	- NEW FONT
 
 4. Make it actually work
 	- fix up the code (see comments)
 
 5. Finish deleting all of the PracticeIt-related code. This is only for bypassing the filter now.
+
+6. Add 'reset to default' button to settings.
