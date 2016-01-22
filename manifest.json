@@ -17,13 +17,13 @@
   
   "browser_action": {
     "default_icon": "images/popicon.png",
-    "default_popup": "popup.html"
+    "default_popup": "html/popup.html"
   },
   
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "js": ["psmod.js"]
+      "js": ["scripts/psmod.js"]
     }
   ]
 }
