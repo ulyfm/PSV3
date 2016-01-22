@@ -31,7 +31,8 @@ var pastRequests = [];
 
 /* checks to see if the page will be redirected to iboss (10.7.1.210) */
 var pageBlockedCB = function(details) {
-	if(details.statusCode.toString().startsWith("3")){
+	alert(details.url);
+	if(details.statusCode.toString().indexOf("3") === 0){
 		if(url redirects to iboss){
 			/* at this point we need to resend the request--get its id! */
 			return {cancel: true};
