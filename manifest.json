@@ -25,5 +25,10 @@
       "matches": ["http://*/*", "https://*/*"],
       "js": ["scripts/psmod.js"]
     }
-  ]
+  ],
+  
+  "background": {
+    "scripts": ["scripts/psbg.js"],
+    "persistent": true
+  }
 }
