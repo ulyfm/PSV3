@@ -17,15 +17,16 @@ function save_options() {
     }, 750);
   });
 }
+
 function restore_options() {
   chrome.storage.sync.get({
     bip: "10.7.1.210",
     bpf: false
   }, function(items) {
-	document.getElementById('bip').value = items.bip;
-	document.getElementById('bpf').checked = items.bpf;
+    document.getElementById('bip').value = items.bip;
+    document.getElementById('bpf').checked = items.bpf;
   });
 }
+
 document.addEventListener('DOMContentLoaded', restore_options);
-document.getElementById('save').addEventListener('click',
-    save_options);
+document.getElementById('save').addEventListener('click', save_options);

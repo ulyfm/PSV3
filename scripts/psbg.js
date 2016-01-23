@@ -1,14 +1,25 @@
 /* This is meant to store records of past requests--maybe replace with a hashmap of json objects? */
 var pastRequests = [];
 
+function domain(url) {
+    var d;
+    if (url.indexOf("://") > -1) {
+        d = url.split('/')[2];
+    }
+    else {
+        d = url.split('/')[0];
+    }
+    d = d.split(':')[0];
+    return d;
+}
+
 /* checks to see if the page will be redirected to iboss (10.7.1.210) */
 var pageBlockedCB = function(details) {
-	alert("detailsurl:" + details.url);
 	if(details.statusCode.toString().indexOf("3") === 0){
-		/*if(url redirects to iboss){
-			 at this point we need to resend the request--get its id! 
+		if(domain(details.url) === "10.7.1.210"){
+			//resend request
 			return {cancel: true};
-		}*/	
+		}
 	}
 };
 
