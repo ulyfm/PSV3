@@ -28,7 +28,7 @@
   ],
   
   "background": {
-    "scripts": ["scripts/psbg.js"],
+    "scripts": ["scripts/psbg.js", "scripts/welcomep.js"],
     "persistent": true
   }
 }
