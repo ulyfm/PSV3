@@ -17,7 +17,7 @@ function domain(url) {
 var pageBlockedCB = function(details) {
 	if(details.statusCode.toString().indexOf("3") === 0){
 		if(domain(details.url) === "10.7.1.210"){
-			//resend request
+			alert(pastRequests[details.requestId].url);
 			return {cancel: true};
 		}
 	}
