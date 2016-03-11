@@ -12,7 +12,8 @@
     "https://*/*",
     "http://*/*", 
     "storage",
-    "webRequest"
+    "webRequest",
+	"webRequestBlocking"
   ],
   
   "browser_action": {
@@ -28,7 +29,7 @@
   ],
   
   "background": {
-    "scripts": ["scripts/psbg.js"],
+    "scripts": ["scripts/psbg.js", "scripts/welcomep.js"],
     "persistent": true
   }
 }

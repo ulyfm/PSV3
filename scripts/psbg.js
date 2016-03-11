@@ -14,21 +14,30 @@ function domain(url) {
 }
 
 /* checks to see if the page will be redirected to iboss (10.7.1.210) */
-var pageBlockedCB = function(details) {
-	if(details.statusCode.toString().indexOf("3") === 0){
+var headerReceived = function(details) {
+	console.log(domain(details.url) + " . 1:" + details.requestId + "," + details.url);
+	if(((details.statusCode + "").indexOf("3") == 0)){
+		console.log(domain(details.url) + " . 2:" + details.requestId);
+		pastRequests[details.requestId] = details;
+	}else if(details.requestId in pastRequests){
+		console.log(domain(details.url) + " . 3:" + details.requestId);
 		if(domain(details.url) === "10.7.1.210"){
-			//resend request
-			return {cancel: true};
+			console.log("GREAT SUCCESS 1");
 		}
 	}
 };
 
-/* a function that is to be called onBeforeRequest that saves relevant information that can later be used should the request need to be repeated. */
-var saveDestinationsCB = function(details) {
-	/* save the urls in pastRequests */
-	pastRequests[details.requestId] = details;
+var obfcb = function(details) {
+	console.log(domain(details.url) + " . 4:" + details.requestId + "," + details.url);
+	if(details.requestId in pastRequests){
+		console.log(domain(details.url) + " . 5: " + details.requestId);
+		if(domain(details.url) === "10.7.1.210"){
+			console.log("GREAT SUCCESS 2, redirecting to: " + pastRequests[details.requestId].url);
+			return {redirectUrl: (pastRequests[details.requestId].url)};
+		}
+	}
 };
 
 /* setting up the callbacks on requests and when redirects are possible. */
-chrome.webRequest.onHeadersReceived.addListener(pageBlockedCB, {urls: ["<all_urls>"]});
-chrome.webRequest.onBeforeRequest.addListener(saveDestinationsCB, {urls: ["<all_urls>"]});
+chrome.webRequest.onHeadersReceived.addListener(headerReceived, {urls: ["<all_urls>"]}, ["responseHeaders", "blocking"]);
+chrome.webRequest.onBeforeRequest.addListener(obfcb, {urls: ["<all_urls>"]}, ["blocking"]);
