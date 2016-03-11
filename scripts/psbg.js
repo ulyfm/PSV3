@@ -22,12 +22,7 @@ var headerReceived = function(details) {
 	}else if(details.requestId in pastRequests){
 		console.log(domain(details.url) + " . 3:" + details.requestId);
 		if(domain(details.url) === "10.7.1.210"){
-<<<<<<< HEAD
 			console.log("GREAT SUCCESS 1");
-=======
-			alert(pastRequests[details.requestId].url);
-			return {cancel: true};
->>>>>>> origin/master
 		}
 	}
 };
@@ -44,10 +39,5 @@ var obfcb = function(details) {
 };
 
 /* setting up the callbacks on requests and when redirects are possible. */
-<<<<<<< HEAD
 chrome.webRequest.onHeadersReceived.addListener(headerReceived, {urls: ["<all_urls>"]}, ["responseHeaders", "blocking"]);
 chrome.webRequest.onBeforeRequest.addListener(obfcb, {urls: ["<all_urls>"]}, ["blocking"]);
-=======
-chrome.webRequest.onHeadersReceived.addListener(pageBlockedCB, {urls: ["<all_urls>"]});
-chrome.webRequest.onBeforeRequest.addListener(saveDestinationsCB, {urls: ["<all_urls>"]});
->>>>>>> origin/master
